@@ -1,5 +1,6 @@
 package io.generate.excel.application.utils.support.aspect;
 
+import io.generate.excel.application.domain.report.MemoryUseCaseReport;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -24,19 +25,21 @@ public class IntegrationTestSupportAspect {
 
         log.info("[report] [IntegrationTestSupport] : Before Memory : {}, After Memory : {}, Used Memory : {}", beforeMemory, afterMemory, usedMemory);
 
-        Field[] declaredFields = result.getClass().getDeclaredFields();
+        if (result instanceof MemoryUseCaseReport) {
+            Field[] declaredFields = result.getClass().getDeclaredFields();
 
-        for (Field declaredField : declaredFields) {
-            if (!declaredField.canAccess(result)) {
-                declaredField.setAccessible(true);
-            }
+            for (Field declaredField : declaredFields) {
+                if (!declaredField.canAccess(result)) {
+                    declaredField.setAccessible(true);
+                }
 
-            String fieldName = declaredField.getName();
+                String fieldName = declaredField.getName();
 
-            switch (fieldName) {
-                case "before" -> declaredField.set(result, beforeMemory);
-                case "after" -> declaredField.set(result, afterMemory);
-                case "used" -> declaredField.set(result, usedMemory);
+                switch (fieldName) {
+                    case "before" -> declaredField.set(result, beforeMemory);
+                    case "after" -> declaredField.set(result, afterMemory);
+                    case "used" -> declaredField.set(result, usedMemory);
+                }
             }
         }
 
