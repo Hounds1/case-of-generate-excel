@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: report
+
+expression:
+  file:
+    base:
+      path: C:/test
