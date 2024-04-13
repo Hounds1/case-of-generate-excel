@@ -29,6 +29,10 @@ import java.util.Map;
  * Dummy List Range = 10000
  * Average Consumed = 172.2 MB
  * Etc : none
+ *
+ * IntelliJ Profiler Recorded
+ * addCells : 466,624,488 (bytes) -> 455.04 (MB)
+ * transferTo : 330,805,112 (bytes) -> 315.21 (MB)
  */
 
 @Service

@@ -28,6 +28,10 @@ import java.util.Map;
  * Dummy List Range = 10000
  * Average Consumed = 104.2 MB
  * Etc : Remove ByteArrayOutputStream, Forced Dismiss All Objects
+ *
+ * IntelliJ Profiler Recorded
+ * addCells : 567,969,721 (bytes) -> 541.83 (MB)
+ * transferTo : 237,985,176 (bytes) -> 226.82 (MB)
  */
 
 @Service
