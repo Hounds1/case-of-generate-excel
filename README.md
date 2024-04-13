@@ -7,3 +7,7 @@
 - [#3] ForcedDismissGenerator [링크](https://github.com/Hounds1/case-of-generate-excel/blob/main/src/main/java/io/generate/excel/application/service/ChangeOutputStreamGenerator.java)
 - [#4] BaseWithFoecedDismissGenerator [링크](https://github.com/Hounds1/case-of-generate-excel/blob/main/src/main/java/io/generate/excel/application/service/ChangeOutputStreamGenerator.java)
 - 각 결과 상단 주석 참조
+
+# Support
+- [#1] IntegrationTestSupportAspect [링크](https://github.com/Hounds1/case-of-generate-excel/blob/main/src/main/java/io/generate/excel/application/utils/support/aspect/IntegrationTestSupportAspect.java)
+-- 호출 별 진입 전, 후 메모리 사용량 기록
